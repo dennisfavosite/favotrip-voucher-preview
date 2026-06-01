@@ -453,17 +453,17 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .vcal__note { display: flex; gap: .5rem; align-items: flex-start; max-width: 70ch; margin: 1.1rem auto 0; font-size: var(--fs-300); color: var(--text-2); line-height: 1.5; }
 .vcal__note svg { width: 1.1rem; height: 1.1rem; color: var(--green); flex: none; margin-top: .1rem; }
 
-/* ===== Destination map (replaces the old fake 'partner hotels' name list) ===== */
-.destmap { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(1.25rem, 3vw, 2.25rem); align-items: stretch; }
-@media (max-width: 820px) { .destmap { grid-template-columns: 1fr; } }
-.destmap__map { position: relative; min-height: 320px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-xs); background: var(--surface-2); }
-.destmap__map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
-@media (max-width: 820px) { .destmap__map { min-height: 240px; } }
-.destmap__side { display: flex; flex-direction: column; }
-.destmap__side .guarantee-chip { align-self: flex-start; }
-.destmap__list { display: grid; gap: .65rem; margin-top: 1.1rem; }
-.destmap__list li { display: flex; gap: .55rem; align-items: flex-start; font-size: var(--fs-400); color: var(--text); }
-.destmap__list svg { width: 1.15rem; height: 1.15rem; color: var(--green); flex: none; margin-top: .12rem; }
+/* ===== Example hotels (real properties, shown as examples; hotel is chosen at redemption) ===== */
+.exhotels { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 1rem; }
+.exhotel { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-xs); }
+.exhotel__media { position: relative; aspect-ratio: 4 / 3; background: var(--surface-2); }
+.exhotel__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.exhotel__tag { position: absolute; top: .55rem; left: .55rem; background: rgba(35, 36, 86, .82); color: #fff; font-size: 11px; font-weight: 700; padding: .15rem .5rem; border-radius: var(--pill); }
+.exhotel__body { display: flex; flex-direction: column; gap: .3rem; padding: .8rem .9rem 1rem; }
+.exhotel__stars { color: #f5a623; font-size: 13px; letter-spacing: 1px; line-height: 1; }
+.exhotel__name { margin: 0; font-size: var(--fs-500); font-weight: 700; color: var(--ink); line-height: 1.25; }
+.exhotel__area { display: inline-flex; align-items: center; gap: .35rem; font-size: var(--fs-300); color: var(--text-2); }
+.exhotel__area svg { width: .95rem; height: .95rem; color: var(--green); flex: none; }
 
 /* USP trio */
 .usp { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow-xs); height: 100%; }
