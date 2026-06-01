@@ -230,6 +230,37 @@
     });
   });
 
+  /* ---- Photo gallery + lightbox (deal/voucher detail) ---- */
+  document.querySelectorAll(".gallery").forEach((g) => {
+    const lb = g.querySelector(".lightbox");
+    if (!lb) return;
+    const mainImg = lb.querySelector("[data-lightbox-img]");
+    const counter = lb.querySelector("[data-lightbox-counter]");
+    const thumbs = Array.from(lb.querySelectorAll("[data-lightbox-go]"));
+    const srcs = thumbs.map((t) => t.querySelector("img").getAttribute("src"));
+    let idx = 0;
+    const render = () => {
+      mainImg.setAttribute("src", srcs[idx]);
+      if (counter) counter.textContent = String(idx + 1);
+      thumbs.forEach((t, i) => t.classList.toggle("active", i === idx));
+    };
+    const open = (i) => { idx = i; render(); lb.hidden = false; document.body.style.overflow = "hidden"; };
+    const close = () => { lb.hidden = true; document.body.style.overflow = ""; };
+    const go = (d) => { idx = (idx + d + srcs.length) % srcs.length; render(); };
+    g.querySelectorAll("[data-gallery-open]").forEach((b) => b.addEventListener("click", () => open(Number(b.dataset.galleryOpen) || 0)));
+    lb.querySelector("[data-lightbox-close]").addEventListener("click", close);
+    lb.querySelector("[data-lightbox-prev]").addEventListener("click", () => go(-1));
+    lb.querySelector("[data-lightbox-next]").addEventListener("click", () => go(1));
+    thumbs.forEach((t, i) => t.addEventListener("click", () => { idx = i; render(); }));
+    lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+    document.addEventListener("keydown", (e) => {
+      if (lb.hidden) return;
+      if (e.key === "Escape") close();
+      else if (e.key === "ArrowRight") go(1);
+      else if (e.key === "ArrowLeft") go(-1);
+    });
+  });
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
