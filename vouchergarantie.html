@@ -16,11 +16,10 @@
 <meta property="og:locale" content="nl_NL">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/images/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Favotrip","url":"https://www.favotrip.nl","logo":"https://www.favotrip.nl/images/favotrip-logo.svg","sameAs":["https://www.facebook.com/favotrip","https://www.instagram.com/favotrip","https://www.tiktok.com/@favotrip.nl"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"1200"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Favotrip","url":"https://www.favotrip.nl","logo":"https://www.favotrip.nl/images/favotrip-logo.svg","sameAs":["https://www.facebook.com/favotrip","https://www.instagram.com/favotrip","https://www.tiktok.com/@favotrip.nl"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.4","reviewCount":"1200"}}</script>
 </head>
 <body id="top">
 
@@ -28,19 +27,26 @@
   <header class="site-header">
     <div class="container container--wide">
       <nav class="nav" aria-label="Hoofdmenu">
-        <a class="nav__logo" href="index.html" aria-label="Favotrip, naar home">
-          <img src="assets/images/favotrip-logo.svg" alt="Favotrip" width="184" height="45">
-        </a>
+        <a class="nav__logo" href="index.html" aria-label="Favotrip, naar home"><img src="assets/images/favotrip-logo.svg" alt="Favotrip" width="184" height="45"></a>
         <ul class="nav__menu">
-          <li><a class="nav__link" href="belevingen.html">Belevingen</a></li>
-          <li><a class="nav__link" href="hoe-het-werkt.html">Hoe het werkt</a></li>
-          <li><a class="nav__link is-active" href="vouchergarantie.html">Vouchergarantie</a></li>
-          <li><a class="nav__link" href="cadeaubon.html">Cadeaubon</a></li>
-          <li><a class="nav__link" href="zakelijk.html">Zakelijk</a></li>
+          <li><a class="nav__link" href="aanbiedingen.html">Aanbiedingen</a></li>
+          <li class="nav__item">
+            <button class="nav__trigger" aria-haspopup="true">Reiscategorie&euml;n <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="nav__dropdown"><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg> Wellness en spa</a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg> Stedentrips</a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v14"/></svg> Pretparken</a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 20V9l-3 1V6l-3 1V4l-4 2-4-2v3L5 6v4L2 9v11"/><path d="M2 20h20M9 20v-4a3 3 0 0 1 6 0v4"/></svg> Kasteelhotels</a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h0a2 2 0 0 0 2-2V2M5 2v20M16 2v20M21 7c0 3-2 4-5 4 0-2 0-9 5-9z"/></svg> Culinair</a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 11H2L8 3z"/></svg> Natuur en wandelen</a></div>
+          </li>
+          <li class="nav__item">
+            <button class="nav__trigger" aria-haspopup="true">Bestemmingen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="nav__dropdown"><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Parijs <small>Stad van de liefde</small></a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Berlijn <small>Bruisende hoofdstad</small></a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Dusseldorf <small>Shoppen aan de Rijn</small></a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> De Veluwe <small>Natuur dichtbij huis</small></a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> De Ardennen <small>Wandelen en weldaad</small></a><a href="categorie.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> Moezel <small>Wijn en kastelen</small></a></div>
+          </li>
+          <li class="nav__item">
+            <button class="nav__trigger is-active" aria-haspopup="true">Vouchers &amp; cadeau <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+            <div class="nav__dropdown"><a href="vouchers.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v14"/></svg> <span>Voucher kopen<small>Een beleving als cadeau</small></span></a><a href="cadeaubon.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8M16.5 8a2.5 2.5 0 0 0 0-5C13 3 12 8 12 8"/></svg> <span>Cadeaubon<small>Met persoonlijke boodschap</small></span></a><a href="zakelijk.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg> <span>Zakelijk<small>Cadeaus voor je team</small></span></a><a href="vouchergarantie.html"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> <span>Vouchergarantie<small>Altijd de volledige waarde</small></span></a><a href="verzilveren.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <span>Verzilveren<small>Voucher inwisselen</small></span></a></div>
+          </li>
+          <li><a class="nav__link" href="inspiratie.html">Inspiratie</a></li>
         </ul>
         <div class="nav__actions">
           <a class="nav__redeem" href="verzilveren.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v14"/></svg> Verzilveren</a>
-          <a class="btn hide-mobile" href="belevingen.html">Bekijk belevingen</a>
+          <a class="btn hide-mobile" href="cadeaubon.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8M16.5 8a2.5 2.5 0 0 0 0-5C13 3 12 8 12 8"/></svg> Cadeaubon</a>
           <button class="nav__toggle" id="navToggle" aria-label="Menu openen" aria-expanded="false" aria-controls="mobileMenu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
         </div>
       </nav>
@@ -49,209 +55,85 @@
   <div class="mobile-menu" id="mobileMenu" hidden>
     <div class="mobile-menu__scrim" data-close></div>
     <div class="mobile-menu__panel" role="dialog" aria-modal="true" aria-label="Menu">
-      <div class="mobile-menu__top">
-        <img src="assets/images/favotrip-logo.svg" alt="Favotrip">
-        <button class="mobile-menu__close" data-close aria-label="Menu sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-      </div>
-      <a class="mobile-link" href="belevingen.html">Belevingen</a>
-      <a class="mobile-link" href="hoe-het-werkt.html">Hoe het werkt</a>
-      <a class="mobile-link" href="vouchergarantie.html">Vouchergarantie</a>
+      <div class="mobile-menu__top"><img src="assets/images/favotrip-logo.svg" alt="Favotrip"><button class="mobile-menu__close" data-close aria-label="Menu sluiten"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+      <a class="mobile-link" href="aanbiedingen.html">Aanbiedingen</a>
+      <a class="mobile-link" href="categorie.html">Reiscategorie&euml;n</a>
+      <a class="mobile-link" href="aanbiedingen.html">Bestemmingen</a>
+      <a class="mobile-link" href="vouchers.html">Voucher kopen</a>
       <a class="mobile-link" href="cadeaubon.html">Cadeaubon</a>
       <a class="mobile-link" href="zakelijk.html">Zakelijk</a>
+      <a class="mobile-link" href="vouchergarantie.html">Vouchergarantie</a>
+      <a class="mobile-link" href="inspiratie.html">Inspiratie</a>
       <a class="mobile-link" href="verzilveren.html">Verzilver je voucher</a>
-      <a class="btn btn--block" href="belevingen.html">Bekijk belevingen</a>
+      <a class="btn btn--block" href="cadeaubon.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8M16.5 8a2.5 2.5 0 0 0 0-5C13 3 12 8 12 8"/></svg> Cadeaubon</a>
     </div>
   </div>
 <main id="main">
 
-  <section class="page-hero">
-    <div class="container page-hero__inner">
-      <nav class="breadcrumb"><a href="index.html">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg> <span>Vouchergarantie</span></nav>
-      <span class="guarantee-chip"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Onze belofte</span>
-      <h1 style="margin-top:1rem">De Favotrip Vouchergarantie</h1>
-      <p>Een beleving kopen zonder risico. Of je hem nu cadeau geeft of voor jezelf bewaart, je voucher houdt altijd zijn waarde. Daar staan wij voor.</p>
-    </div>
-  </section>
+  <section class="page-hero"><div class="container page-hero__inner">
+    <nav class="breadcrumb"><a href="index.html">Home</a> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg> <span>Vouchergarantie</span></nav>
+    <span class="guarantee-chip"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Onze belofte</span>
+    <h1 style="margin-top:1rem">De Favotrip Vouchergarantie</h1>
+    <p>Een beleving kopen zonder risico. Of je hem nu cadeau geeft of voor jezelf bewaart, je voucher houdt altijd zijn waarde. Daar staan wij voor.</p>
+  </div></section>
   <section class="section--tight"><div class="container">
-  <div class="guarantee reveal">
-    <div class="guarantee__grid">
-      <div>
-        <span class="guarantee__shield" style="color:#8ff0b6"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
-        <h2>De Favotrip Vouchergarantie</h2>
-        <p>Een beleving cadeau doen of voor jezelf bewaren, zonder risico. Daar staan wij voor.</p>
-        <ul class="guarantee__points">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Altijd een alternatief.</b> Is je gekozen hotel of activiteit niet meer beschikbaar? Wij regelen een gelijkwaardige optie.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Volledige waarde blijft behouden.</b> Je voucher verliest nooit waarde, wat er ook gebeurt.</span></li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>12 maanden de tijd.</b> Geen haast. Kies je datum wanneer het jou uitkomt.</span></li>
-        </ul>
-        <div class="gift__cta" style="margin-top:1.6rem">
-          <a class="btn btn--white" href="vouchergarantie.html">Lees de vouchergarantie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        </div>
-      </div>
-      <div class="guarantee__card">
-        <h3 style="margin-bottom:.8rem">Onze belofte aan jou</h3>
-        <p class="guarantee__quote">"Is je gekozen hotel niet meer beschikbaar? Dan regelen wij een gelijkwaardig alternatief. Je voucher behoudt altijd de volledige waarde."</p>
-      </div>
+  <div class="guarantee reveal"><div class="guarantee__grid">
+    <div>
+      <span class="guarantee__shield" style="color:#8ff0b6"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <h2>De Favotrip Vouchergarantie</h2>
+      <p>Een beleving cadeau doen of voor jezelf bewaren, zonder risico. Daar staan wij voor.</p>
+      <ul class="guarantee__points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Altijd een alternatief.</b> Is je gekozen hotel of activiteit niet meer beschikbaar? Wij regelen een gelijkwaardige optie.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>Volledige waarde blijft behouden.</b> Je voucher verliest nooit waarde, wat er ook gebeurt.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span><b>12 maanden de tijd.</b> Geen haast. Kies je datum wanneer het jou uitkomt.</span></li>
+      </ul>
+      <div class="gift__cta" style="margin-top:1.6rem"><a class="btn btn--white" href="vouchergarantie.html">Lees de vouchergarantie <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </div>
-  </div></div></section>
-  <section class="section">
-    <div class="container">
-      <div class="section-head center"><span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Waarom je gerust kunt kopen</span><h2 class="section-title">Drie garanties, geen kleine lettertjes</h2></div>
-      
+    <div class="guarantee__card"><h3 style="margin-bottom:.8rem">Onze belofte aan jou</h3><p class="guarantee__quote">"Is je gekozen hotel niet meer beschikbaar? Dan regelen wij een gelijkwaardig alternatief. Je voucher behoudt altijd de volledige waarde."</p></div>
+  </div></div></div></section>
+  <section class="section"><div class="container"><div class="section-head center"><span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> Waarom je gerust kunt kopen</span><h2 class="section-title">Drie garanties, geen kleine lettertjes</h2></div>
   <div class="grid grid-3">
-    <div class="usp reveal">
-      <span class="usp__icon"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
-      <h3>Vouchergarantie</h3>
-      <p>Is je gekozen hotel niet meer beschikbaar? Dan regelen wij een gelijkwaardig alternatief. Je voucher behoudt altijd de volledige waarde.</p>
-    </div>
-    <div class="usp usp--orange reveal">
-      <span class="usp__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6 21 11a2 2 0 0 1 0 2.8l-7.2 7.2a2 2 0 0 1-2.8 0L2.6 12.6A2 2 0 0 1 2 11.2V4a2 2 0 0 1 2-2h7.2a2 2 0 0 1 1.4.6z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></svg></span>
-      <h3>Beste prijs garantie</h3>
-      <p>Door grote volumes in te kopen, bieden wij kortingen die je zelf niet kunt krijgen. Nergens goedkoper voor dezelfde kwaliteit.</p>
-    </div>
-    <div class="usp usp--blue reveal">
-      <span class="usp__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span>
-      <h3>Bewezen kwaliteit</h3>
-      <p>Wij werken alleen met hotels die goede reviews hebben op Booking.com en TripAdvisor. Al meer dan 50.000 vouchers succesvol verzilverd.</p>
-    </div>
-  </div>
-    </div>
-  </section>
-  <section class="section section--surface">
-    <div class="container">
-      <div class="detail-layout">
-        <div>
-          <h2 class="section-title" style="font-size:var(--fs-800)">Wat de garantie precies inhoudt</h2>
-          <div class="prose mt-4">
-            <p>Bij Favotrip koop je een beleving als voucher en kies je later zelf je datum en hotel. Het kan gebeuren dat een specifiek hotel of een activiteit op jouw gekozen moment niet meer beschikbaar is. Dan komt de Vouchergarantie in actie.</p>
-            <p><b>Wij regelen een gelijkwaardig alternatief.</b> Een vergelijkbaar hotel of een vergelijkbare activiteit van minimaal dezelfde kwaliteit, zonder dat het jou extra kost. Je voucher behoudt altijd de volledige waarde.</p>
-            <p>Zo weet je zeker dat je beleving doorgaat, ook als de plannen of de beschikbaarheid veranderen.</p>
-          </div>
-          <ul class="detail-includes mt-6">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Altijd een gelijkwaardig alternatief bij niet-beschikbaarheid</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Je voucher verliest nooit waarde</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 12 maanden de tijd om te kiezen</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Direct per e-mail geleverd</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 14 dagen bedenktijd op je aankoop</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Veilig betalen met iDEAL, creditcard of PayPal</li>
-          </ul>
-        </div>
-        <aside>
-          <div class="buybox" style="position:static">
-            <span class="guarantee-chip"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Vouchergarantie</span>
-            <p class="guarantee__quote" style="color:var(--ink);font-style:italic;margin-top:1rem">"Is je gekozen hotel niet meer beschikbaar? Dan regelen wij een gelijkwaardig alternatief. Je voucher behoudt altijd de volledige waarde."</p>
-            <a class="btn btn--block mt-6" href="belevingen.html">Bekijk belevingen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-            <a class="btn btn--block btn--ghost mt-2" href="verzilveren.html">Verzilver je voucher</a>
-          </div>
-        </aside>
+    <div class="usp reveal"><span class="usp__icon"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Vouchergarantie</h3><p>Is je gekozen hotel niet meer beschikbaar? Dan regelen wij een gelijkwaardig alternatief. Je voucher behoudt altijd de volledige waarde.</p></div>
+    <div class="usp usp--orange reveal"><span class="usp__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6 21 11a2 2 0 0 1 0 2.8l-7.2 7.2a2 2 0 0 1-2.8 0L2.6 12.6A2 2 0 0 1 2 11.2V4a2 2 0 0 1 2-2h7.2a2 2 0 0 1 1.4.6z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></svg></span><h3>Beste prijs garantie</h3><p>Door grote volumes in te kopen, bieden wij kortingen die je zelf niet kunt krijgen. Nergens goedkoper voor dezelfde kwaliteit.</p></div>
+    <div class="usp usp--blue reveal"><span class="usp__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span><h3>Bewezen kwaliteit</h3><p>Wij werken alleen met hotels die goede reviews hebben op Booking.com en TripAdvisor. Al meer dan 50.000 keer succesvol geboekt.</p></div>
+  </div></div></section>
+  <section class="section section--surface"><div class="container"><div class="detail-layout">
+    <div>
+      <h2 class="section-title" style="font-size:var(--fs-800)">Wat de garantie precies inhoudt</h2>
+      <div class="prose mt-4">
+        <p>Bij Favotrip koop je een beleving en kies je later zelf je datum en hotel. Het kan gebeuren dat een specifiek hotel of een activiteit op jouw gekozen moment niet meer beschikbaar is. Dan komt de Vouchergarantie in actie.</p>
+        <p><b>Wij regelen een gelijkwaardig alternatief.</b> Een vergelijkbaar hotel of een vergelijkbare activiteit van minimaal dezelfde kwaliteit, zonder dat het jou extra kost. Je voucher behoudt altijd de volledige waarde.</p>
+        <p>Zo weet je zeker dat je beleving doorgaat, ook als de plannen of de beschikbaarheid veranderen.</p>
       </div>
+      <ul class="detail-includes mt-6"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Altijd een gelijkwaardig alternatief bij niet-beschikbaarheid</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Je voucher verliest nooit waarde</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 12 maanden de tijd om te kiezen</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Direct per e-mail geleverd</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 14 dagen bedenktijd op je aankoop</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Veilig betalen met iDEAL, creditcard of PayPal</li></ul>
     </div>
-  </section>
-  <section class="section section--beige">
-    <div class="container">
-      <div class="section-head center"><h2 class="section-title">Veelgestelde vragen over de garantie</h2></div>
-      <div class="faq" style="margin-inline:auto">
-        
-  <details class="faq__item">
-    <summary class="faq__q">Wat betekent gelijkwaardig alternatief? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-    <div class="faq__a">Een hotel of activiteit van minimaal dezelfde kwaliteit en in dezelfde categorie als wat je oorspronkelijk koos, zonder extra kosten voor jou.</div>
-  </details>
-  <details class="faq__item">
-    <summary class="faq__q">Geldt de garantie ook voor cadeauvouchers? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-    <div class="faq__a">Ja. Of je de voucher nu zelf gebruikt of cadeau geeft, de Vouchergarantie geldt altijd.</div>
-  </details>
-  <details class="faq__item">
-    <summary class="faq__q">Verloopt mijn garantie samen met de voucher? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
-    <div class="faq__a">De garantie geldt zolang je voucher geldig is, dus 12 maanden vanaf aankoop.</div>
-  </details>
-      </div>
-    </div>
-  </section>
+    <aside><div class="buybox" style="position:static"><span class="guarantee-chip"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Vouchergarantie</span><p class="guarantee__quote" style="color:var(--ink);font-style:italic;margin-top:1rem">"Is je gekozen hotel niet meer beschikbaar? Dan regelen wij een gelijkwaardig alternatief. Je voucher behoudt altijd de volledige waarde."</p><a class="btn btn--block mt-6" href="aanbiedingen.html">Bekijk aanbiedingen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a><a class="btn btn--block btn--ghost mt-2" href="verzilveren.html">Verzilver je voucher</a></div></aside>
+  </div></div></section>
+  <section class="section section--beige"><div class="container"><div class="section-head center"><h2 class="section-title">Veelgestelde vragen over de garantie</h2></div><div class="faq" style="margin-inline:auto"><details class="faq__item"><summary class="faq__q">Wat betekent gelijkwaardig alternatief? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq__a">Een hotel of activiteit van minimaal dezelfde kwaliteit en in dezelfde categorie als wat je oorspronkelijk koos, zonder extra kosten voor jou.</div></details><details class="faq__item"><summary class="faq__q">Geldt de garantie ook voor cadeauvouchers? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq__a">Ja. Of je de voucher nu zelf gebruikt of cadeau geeft, de Vouchergarantie geldt altijd.</div></details><details class="faq__item"><summary class="faq__q">Verloopt mijn garantie samen met de voucher? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div class="faq__a">De garantie geldt zolang je voucher geldig is, dus 12 maanden vanaf aankoop.</div></details></div></div></section>
   
-  <section class="section section--tight">
-    <div class="container">
-      <div class="newsletter reveal">
-        <div class="newsletter__grid">
-          <div>
-            <h2>Wil je als eerste onze belevingen ontvangen?</h2>
-            <p>Mis het niet en vraag ze aan. Geen spam, alleen de leukste uitjes en aanbiedingen.</p>
-          </div>
-          <div>
-            <form class="newsletter__form" data-newsletter>
-              <input type="email" name="email" placeholder="E-mailadres" aria-label="E-mailadres" required>
-              <button class="btn btn--blue" type="submit">Aanvragen</button>
-            </form>
-            <small>Door je aan te melden ga je akkoord met ons privacybeleid.</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="section section--tight"><div class="container"><div class="newsletter reveal"><div class="newsletter__grid">
+    <div><h2>Wil je als eerste onze aanbiedingen ontvangen?</h2><p>Mis het niet en vraag ze aan. Geen spam, alleen de leukste reizen, uitjes en cadeau-ideeen.</p></div>
+    <div><form class="newsletter__form" data-newsletter><input type="email" name="email" placeholder="E-mailadres" aria-label="E-mailadres" required><button class="btn btn--blue" type="submit">Aanvragen</button></form><small>Door je aan te melden ga je akkoord met ons privacybeleid.</small></div>
+  </div></div></div></section>
 </main>
 
   <footer class="site-footer">
-    <div class="footer-pay">
-      <div class="container footer-pay__row">
-        <span>Veilige betaling</span>
-        <span class="footer-pay__logos">
-          <img src="assets/images/payments/ideal.png" alt="iDEAL">
-          <img src="assets/images/payments/bancontact.png" alt="Bancontact">
-          <img src="assets/images/payments/mastercard.png" alt="Creditcard">
-          <img src="assets/images/payments/paypal.svg" alt="PayPal">
-        </span>
+    <div class="footer-pay"><div class="container footer-pay__row"><span>Veilige betaling</span><span class="footer-pay__logos">
+      <img src="assets/images/payments/ideal.png" alt="iDEAL"><img src="assets/images/payments/bancontact.png" alt="Bancontact"><img src="assets/images/payments/mastercard.png" alt="Creditcard"><img src="assets/images/payments/paypal.svg" alt="PayPal">
+    </span></div></div>
+    <div class="container"><div class="footer-main">
+      <div class="footer-col footer-col--brand">
+        <div class="footer-brand__word">favotrip<sup>&copy;2026</sup></div>
+        <p class="mt-2" style="max-width:36ch">Bijzondere reizen om zelf te boeken of cadeau te geven. Scherpe prijzen, handgeselecteerd door onze lokale experts, met de Favotrip Vouchergarantie.</p>
+        <div class="footer-socials"><a href="https://www.tiktok.com/@favotrip.nl" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.13V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12z"/></svg></a><a href="https://www.facebook.com/favotrip" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.49 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.49h-2.8v8.44C19.6 23.08 24 18.1 24 12.07z"/></svg></a><a href="https://www.instagram.com/favotrip" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a></div>
       </div>
+      <div class="footer-col"><h4>Ontdekken</h4><div class="footer-links"><a href="aanbiedingen.html">Aanbiedingen</a><a href="categorie.html">Reiscategorie&euml;n</a><a href="aanbiedingen.html">Bestemmingen</a><a href="inspiratie.html">Inspiratie</a><a href="vouchers.html">Voucher kopen</a><a href="cadeaubon.html">Cadeaubon</a></div></div>
+      <div class="footer-col"><h4>Service</h4><div class="footer-links"><a href="vouchergarantie.html">Vouchergarantie</a><a href="verzilveren.html">Verzilver je voucher</a><a href="zakelijk.html">Zakelijk en cadeaus</a><a href="#">Veelgestelde vragen</a><a href="#">Algemene voorwaarden</a><a href="#">Privacy en cookies</a><a href="#">Contact</a></div></div>
     </div>
-    <div class="container">
-      <div class="footer-main">
-        <div class="footer-col footer-col--brand">
-          <div class="footer-brand__word">favotrip<sup>&copy;2026</sup></div>
-          <p class="mt-2" style="max-width:34ch">Belevingen cadeau doen of voor jezelf bewaren. Koop een voucher, kies later zelf je datum, en geniet met de Favotrip Vouchergarantie.</p>
-          <div class="footer-socials">
-            <a href="https://www.tiktok.com/@favotrip.nl" aria-label="TikTok" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.3 0 .59.04.86.13V9.4a6.33 6.33 0 0 0-1-.05A6.34 6.34 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43V8.69a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.12z"/></svg></a>
-            <a href="https://www.facebook.com/favotrip" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.49 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.49h-2.8v8.44C19.6 23.08 24 18.1 24 12.07z"/></svg></a>
-            <a href="https://www.instagram.com/favotrip" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Favotrip</h4>
-          <div class="footer-links">
-            <a href="belevingen.html">Belevingen</a>
-            <a href="hoe-het-werkt.html">Hoe het werkt</a>
-            <a href="vouchergarantie.html">Vouchergarantie</a>
-            <a href="cadeaubon.html">Cadeaubon</a>
-            <a href="verzilveren.html">Verzilver je voucher</a>
-            <a href="zakelijk.html">Zakelijk en cadeaus</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <h4>Klantenservice</h4>
-          <div class="footer-links">
-            <a href="#">Veelgestelde vragen</a>
-            <a href="#">Algemene voorwaarden</a>
-            <a href="#">Privacy en cookies</a>
-            <a href="#">Herroepingsrecht</a>
-            <a href="#">Contact</a>
-            <a href="#">Partnerprogramma</a>
-          </div>
-        </div>
-      </div>
-      <p class="footer-legal">Favotrip B.V. &middot; KvK 85672106 &middot; BTW NL863793498B01 &middot; Papiermolenweg 34, 1032 KJ Amsterdam, Nederland &middot; klantenservice@favotrip.nl</p>
-    </div>
-    <div class="container">
-      <div class="footer-bottom">
-        <span>favotrip</span>
-        <span class="footer-bottom__links">
-          <a href="#top">Naar boven</a>
-          <span>&copy;2026 Alle rechten voorbehouden</span>
-          <a href="#">Beheer cookies</a>
-        </span>
-      </div>
-    </div>
+    <p class="footer-legal">Favotrip B.V. &middot; KvK 85672106 &middot; BTW NL863793498B01 &middot; Papiermolenweg 34, 1032 KJ Amsterdam, Nederland &middot; klantenservice@favotrip.nl</p></div>
+    <div class="container"><div class="footer-bottom"><span>favotrip</span><span class="footer-bottom__links"><a href="#top">Naar boven</a><span>&copy;2026 Alle rechten voorbehouden</span><a href="#">Beheer cookies</a></span></div></div>
   </footer>
-  <a class="whatsapp-fab" href="https://wa.me/31202614916" target="_blank" rel="noopener" aria-label="Chat via WhatsApp"
-     style="position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:55;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.18)">
-     <span style="width:28px;height:28px;display:block"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg></span>
-  </a>
+  <a class="whatsapp-fab" href="https://wa.me/31202614916" target="_blank" rel="noopener" aria-label="Chat via WhatsApp" style="position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:55;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.18)"><span style="width:28px;height:28px;display:block"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg></span></a>
 <script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -97,6 +97,21 @@
     });
   });
 
+  /* ---- Hero tabs (book vs gift) ---- */
+  const heroTabs = document.querySelectorAll(".hero-tab");
+  if (heroTabs.length) {
+    heroTabs.forEach((tab) => tab.addEventListener("click", () => {
+      heroTabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+      document.querySelectorAll(".hero-panel").forEach((p) => { p.hidden = p.dataset.panel !== tab.dataset.tab; });
+    }));
+  }
+
+  /* ---- Date picker (deal detail demo) ---- */
+  document.querySelectorAll(".daterow").forEach((row) => {
+    const btns = row.querySelectorAll("button");
+    btns.forEach((b) => b.addEventListener("click", () => { btns.forEach((x) => x.classList.remove("sel")); b.classList.add("sel"); }));
+  });
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

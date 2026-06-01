@@ -542,3 +542,119 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
 .js .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .js .reveal { opacity: 1; transform: none; } }
+
+/* ========================================================================
+   v2 additions: full travel brand (book direct + voucher)
+   ======================================================================== */
+
+/* --- Nav dropdowns --- */
+.nav__item { position: relative; }
+.nav__trigger { display: inline-flex; align-items: center; gap: .3rem; font-weight: 600; font-size: var(--fs-400); color: rgba(35,36,86,.82); padding: .55rem .7rem; border-radius: 8px; }
+.nav__trigger:hover, .nav__item:hover .nav__trigger, .nav__item:focus-within .nav__trigger { color: var(--blue); background: #F3F7FB; }
+.nav__trigger svg { width: 1em; height: 1em; transition: transform .2s var(--ease); }
+.nav__item:hover .nav__trigger svg, .nav__item:focus-within .nav__trigger svg { transform: rotate(180deg); }
+.nav__dropdown {
+  position: absolute; top: calc(100% + 6px); left: 0; min-width: 240px;
+  background: #fff; border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-lg);
+  padding: .5rem; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .18s var(--ease), transform .18s var(--ease);
+  z-index: 80;
+}
+.nav__item:hover .nav__dropdown, .nav__item:focus-within .nav__dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav__dropdown a { display: flex; align-items: center; gap: .6rem; padding: .6rem .7rem; border-radius: 9px; font-size: var(--fs-400); font-weight: 600; color: var(--ink); }
+.nav__dropdown a:hover { background: #F3F7FB; color: var(--blue); }
+.nav__dropdown a svg { width: 1.1rem; height: 1.1rem; color: var(--blue); flex: none; }
+.nav__dropdown a small { display: block; font-weight: 500; color: var(--muted); font-size: var(--fs-300); }
+.nav__search { display: inline-flex; align-items: center; gap: .4rem; font-weight: 600; color: var(--ink); font-size: var(--fs-400); padding: .55rem .6rem; border-radius: 8px; }
+.nav__search:hover { color: var(--blue); background: #F3F7FB; }
+
+/* --- Hero tabs (book vs gift) --- */
+.hero-card__tabs { display: inline-flex; gap: .25rem; background: #EFEAF7; padding: .3rem; border-radius: var(--pill); margin-bottom: .25rem; }
+.hero-tab { font-weight: 700; font-size: var(--fs-400); color: var(--text-2); padding: .55rem 1.1rem; border-radius: var(--pill); display: inline-flex; align-items: center; gap: .45rem; }
+.hero-tab svg { width: 1.1em; height: 1.1em; }
+.hero-tab[aria-selected="true"] { background: #fff; color: var(--navy); box-shadow: var(--shadow-sm); }
+.hero-panel[hidden] { display: none; }
+
+/* --- Dual band (boek of geef) --- */
+.dual { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1rem, 2.5vw, 1.6rem); }
+@media (max-width: 760px) { .dual { grid-template-columns: 1fr; } }
+.dual__card { position: relative; overflow: hidden; border-radius: var(--radius-lg); padding: clamp(1.5rem, 3vw, 2.5rem); color: #fff; min-height: 260px; display: flex; flex-direction: column; justify-content: flex-end; }
+.dual__card img { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+.dual__card::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+.dual__card--book::after { background: linear-gradient(0deg, rgba(7,112,184,.92) 0%, rgba(10,30,55,.55) 100%); }
+.dual__card--gift::after { background: linear-gradient(0deg, rgba(15,122,55,.92) 0%, rgba(15,50,30,.5) 100%); }
+.dual__card > * { position: relative; z-index: 2; }
+.dual__card .eyebrow { color: rgba(255,255,255,.85); }
+.dual__card h3 { color: #fff; font-size: var(--fs-800); margin-top: .4rem; }
+.dual__card p { color: rgba(255,255,255,.9); margin-top: .6rem; max-width: 38ch; }
+.dual__card .btn { margin-top: 1.3rem; align-self: flex-start; }
+
+/* --- Section header with link on the right --- */
+.section-head--row { display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.section-head--row .section-head { margin-bottom: 0; }
+
+/* --- Destination tiles --- */
+.dest-tile { position: relative; display: block; border-radius: var(--radius); overflow: hidden; aspect-ratio: 3/4; box-shadow: var(--shadow-xs); }
+.dest-tile img { width: 100%; height: 100%; transition: transform .4s var(--ease); }
+.dest-tile:hover img { transform: scale(1.07); }
+.dest-tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,20,45,.72) 0%, rgba(15,20,45,.05) 60%); }
+.dest-tile__label { position: absolute; left: .9rem; right: .9rem; bottom: .85rem; z-index: 2; color: #fff; }
+.dest-tile__label strong { display: block; font-size: var(--fs-600); font-weight: 800; }
+.dest-tile__label span { font-size: var(--fs-300); opacity: .92; }
+@media (max-width: 980px) { .dest-grid { grid-template-columns: repeat(3,1fr) !important; } }
+@media (max-width: 640px) { .dest-grid { grid-template-columns: repeat(2,1fr) !important; } }
+
+/* --- Article / inspiratie cards --- */
+.article-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-xs); transition: transform .22s var(--ease), box-shadow .22s var(--ease); height: 100%; }
+.article-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.article-card__media { aspect-ratio: 16/10; overflow: hidden; }
+.article-card__media img { width: 100%; height: 100%; transition: transform .4s var(--ease); }
+.article-card:hover .article-card__media img { transform: scale(1.06); }
+.article-card__body { padding: 1.1rem 1.15rem 1.3rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
+.article-card__meta { display: flex; align-items: center; gap: .6rem; font-size: var(--fs-300); color: var(--muted); font-weight: 600; }
+.article-card__meta .pill { padding: .25rem .55rem; }
+.article-card__title { font-size: var(--fs-600); font-weight: 700; color: var(--ink); line-height: 1.3; }
+.article-card:hover .article-card__title { color: var(--blue); }
+.article-card__excerpt { font-size: var(--fs-400); color: var(--text-2); }
+.article-card__more { margin-top: auto; font-weight: 700; color: var(--blue-cta); display: inline-flex; align-items: center; gap: .35rem; padding-top: .5rem; }
+
+/* --- Brand story --- */
+.brandstory { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.5rem, 4vw, 3rem); align-items: center; }
+.brandstory__media { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow); }
+.brandstory__media img { width: 100%; height: 100%; }
+.brandstory h2 { font-size: var(--fs-900); }
+.brandstory__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.25rem; }
+@media (max-width: 860px) { .brandstory { grid-template-columns: 1fr; } .brandstory__media { order: -1; } .brandstory__cols { grid-template-columns: 1fr; } }
+
+/* --- Deal card price (per person, booking framing) --- */
+.exp-card__book { display: inline-flex; align-items: center; gap: .3rem; font-size: var(--fs-300); color: var(--green-ink); font-weight: 700; }
+.exp-card__book svg { width: .95rem; height: .95rem; }
+
+/* --- Stat band --- */
+.statband { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.statband .stat { text-align: center; padding: 1rem .5rem; }
+.statband .stat strong { display: block; font-family: var(--font); font-size: var(--fs-900); color: var(--navy); font-weight: 800; line-height: 1; }
+.statband .stat span { font-size: var(--fs-400); color: var(--text-2); }
+@media (max-width: 760px) { .statband { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+
+/* --- Category page intro + SEO blocks --- */
+.cat-intro { max-width: 70ch; }
+.cat-toolbar { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+.cat-sort { display: inline-flex; align-items: center; gap: .5rem; font-size: var(--fs-400); color: var(--text-2); }
+.cat-sort select { padding: .55rem .8rem; border: 1px solid var(--border); border-radius: var(--radius-sm); background: #fff; font-weight: 600; }
+.seo-block { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(1.5rem, 3vw, 2.25rem); }
+.seo-block h2 { font-size: var(--fs-800); }
+.seo-block h3 { font-size: var(--fs-600); margin-top: 1.4rem; margin-bottom: .4rem; color: var(--ink); }
+.seo-block p { color: var(--text-2); margin-bottom: 1rem; }
+.chiprow { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chiprow a { font-weight: 600; font-size: var(--fs-400); color: var(--text-2); padding: .5rem .9rem; border-radius: var(--pill); background: #fff; border: 1px solid var(--border); }
+.chiprow a:hover { border-color: #cfd6ea; color: var(--blue); }
+
+/* --- Deal detail: date teaser + dual CTA --- */
+.daterow { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1rem 0; }
+.daterow button { flex: 1 1 0; min-width: 88px; border: 1.5px solid var(--border); background: #fff; border-radius: var(--radius-sm); padding: .6rem .4rem; text-align: center; transition: all .15s; }
+.daterow button:hover { border-color: var(--blue); }
+.daterow button.sel { border-color: var(--blue); background: #EAF4FE; }
+.daterow .d-day { display: block; font-weight: 700; color: var(--ink); font-size: var(--fs-400); }
+.daterow .d-price { display: block; font-size: var(--fs-300); color: var(--text-2); }
+.or-divider { display: flex; align-items: center; gap: .8rem; color: var(--muted); font-size: var(--fs-300); font-weight: 700; margin: .9rem 0; }
+.or-divider::before, .or-divider::after { content: ""; height: 1px; background: var(--border); flex: 1; }
