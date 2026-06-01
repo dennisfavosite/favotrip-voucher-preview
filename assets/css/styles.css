@@ -480,9 +480,10 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .why-cell h3 { margin: 0 0 .5rem; font-size: var(--fs-600); color: var(--ink); }
 .why-cell p { margin: 0; font-size: var(--fs-400); color: var(--text-2); line-height: 1.5; }
 /* Deze speciale aanbieding bevat (2-col checklist) */
-.inc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .85rem 2rem; }
-.inc-row { display: flex; align-items: flex-start; gap: .7rem; font-size: var(--fs-500); color: var(--text); }
-.inc-row svg { width: 22px; height: 22px; color: var(--green); flex: none; margin-top: .1rem; }
+.inc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem 2rem; }
+.inc-row { display: flex; align-items: center; gap: .8rem; font-size: var(--fs-500); color: var(--text); }
+.inc-ic { width: 2.4rem; height: 2.4rem; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+.inc-ic svg { width: 1.3rem; height: 1.3rem; }
 /* Een voucher, meerdere mogelijkheden (accordion) */
 .acc__item { border-top: 1px solid var(--border); }
 .acc__item:first-child { border-top: 0; }
