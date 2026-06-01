@@ -113,10 +113,10 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
   font-size: var(--fs-300); font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
   color: var(--orange-dark);
 }
-.section-head { max-width: 46rem; margin-bottom: clamp(1.75rem, 3vw, 2.75rem); }
+.section-head { max-width: 62rem; margin-bottom: clamp(1.75rem, 3vw, 2.75rem); }
 .section-head.center { margin-inline: auto; }
-.section-title { font-size: var(--fs-900); color: var(--ink); }
-.section-sub { margin-top: .85rem; font-size: var(--fs-600); color: var(--text-2); }
+.section-title { font-size: var(--fs-900); color: var(--ink); text-wrap: balance; }
+.section-sub { margin-top: .85rem; font-size: var(--fs-600); color: var(--text-2); text-wrap: pretty; }
 .lead { font-size: var(--fs-600); color: var(--text-2); }
 
 /* grid helpers */
@@ -239,7 +239,7 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .hero__inner { position: relative; z-index: 2; padding-block: clamp(3.5rem, 8vw, 7rem); }
 .hero__content { max-width: 38rem; color: #fff; }
 .hero__content .eyebrow { color: #ffd9b8; }
-.hero h1 { color: #fff; font-size: var(--fs-1000); }
+.hero h1 { color: #fff; font-size: var(--fs-1000); text-wrap: balance; }
 .hero__sub { margin-top: 1.1rem; font-size: var(--fs-600); color: rgba(255, 255, 255, .92); max-width: 34rem; }
 .hero__cta { margin-top: 1.9rem; display: flex; flex-wrap: wrap; gap: .85rem; }
 .hero__trust { margin-top: 1.9rem; display: flex; flex-wrap: wrap; gap: 1.25rem; color: #fff; }
@@ -502,8 +502,8 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .breadcrumb { display: flex; flex-wrap: wrap; gap: .4rem; font-size: var(--fs-300); color: var(--muted); margin-bottom: 1rem; }
 .breadcrumb a { color: var(--text-2); }
 .breadcrumb a:hover { color: var(--blue-cta); }
-.page-hero h1 { font-size: var(--fs-1000); max-width: 22ch; }
-.page-hero p { margin-top: 1rem; font-size: var(--fs-600); color: var(--text-2); max-width: 60ch; }
+.page-hero h1 { font-size: var(--fs-1000); max-width: none; text-wrap: balance; }
+.page-hero p { margin-top: 1rem; font-size: var(--fs-600); color: var(--text-2); max-width: 70ch; text-wrap: pretty; }
 
 /* --------------------------- Filters bar ------------------------------- */
 .filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.75rem; }
