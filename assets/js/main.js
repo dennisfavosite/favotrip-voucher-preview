@@ -279,6 +279,22 @@
     sync();
   });
 
+  /* ---- Checkout: "Voor mezelf" / "Als cadeau" toggle (reveals gift fields) ---- */
+  document.querySelectorAll("[data-gift-choice]").forEach((group) => {
+    const fields = document.querySelector("[data-gift-fields]");
+    const set = (chip) => {
+      group.querySelectorAll(".chip").forEach((c) => c.classList.remove("is-active"));
+      chip.classList.add("is-active");
+      if (fields) fields.hidden = !chip.hasAttribute("data-gift");
+    };
+    group.querySelectorAll(".chip").forEach((chip) => chip.addEventListener("click", () => set(chip)));
+    // Arriving from a "Cadeau geven" CTA (?gift) preselects "Als cadeau".
+    if (/[?&]gift\b/.test(location.search)) {
+      const giftChip = group.querySelector("[data-gift]");
+      if (giftChip) set(giftChip);
+    }
+  });
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
