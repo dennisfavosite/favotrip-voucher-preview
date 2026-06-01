@@ -518,6 +518,14 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .statsband__badge .pstars { color: var(--green); }
 .statsband__badge-t { font-size: var(--fs-300); font-weight: 800; color: var(--green-ink); text-transform: uppercase; letter-spacing: .03em; }
 .statsband__badge-s { font-size: 11px; color: var(--green); }
+/* Aanvullende informatie (production format: 2-column zebra table) */
+.ainfo { max-width: 960px; margin-inline: auto; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; padding-top: clamp(1.25rem, 3vw, 1.75rem); }
+.ainfo__title { margin: 0 0 1rem; padding: 0 clamp(1.25rem, 3vw, 1.75rem); font-size: var(--fs-700); font-weight: 800; color: var(--ink); }
+.ainfo-row { display: grid; grid-template-columns: minmax(170px, 1fr) 2fr; gap: clamp(1rem, 4vw, 3rem); padding: 1.25rem clamp(1.25rem, 3vw, 1.75rem); }
+.ainfo-table > .ainfo-row:nth-child(odd) { background: var(--surface-2); }
+.ainfo-label { font-weight: 700; color: var(--ink); font-size: var(--fs-500); }
+.ainfo-text { color: var(--text-2); font-size: var(--fs-500); line-height: 1.6; }
+@media (max-width: 640px) { .ainfo-row { grid-template-columns: 1fr; gap: .4rem; } }
 
 /* USP trio */
 .usp { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow-xs); height: 100%; }
