@@ -587,7 +587,7 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .buybox__list { margin: 1.1rem 0; display: grid; gap: .6rem; }
 .buybox__list li { display: flex; gap: .55rem; align-items: center; font-size: var(--fs-400); color: var(--text); }
 .buybox__list svg { width: 1.1rem; height: 1.1rem; color: var(--green); flex: none; }
-.buybox__foot { margin-top: .9rem; text-align: center; font-size: var(--fs-300); color: var(--muted); }
+.buybox__foot { margin-top: .65rem; text-align: center; font-size: var(--fs-300); color: var(--muted); }
 
 .info-list { display: grid; gap: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
 .info-list div { display: grid; grid-template-columns: 200px 1fr; gap: 1rem; padding: .9rem 1.1rem; border-bottom: 1px solid var(--border); }
@@ -791,11 +791,11 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .offer-hero { position: relative; height: clamp(300px, 42vw, 460px); }
 .offer-hero img { width: 100%; height: 100%; }
 .offer-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,20,45,.35) 0%, rgba(15,20,45,.05) 50%); }
-.offer-card { position: relative; z-index: 2; margin-top: clamp(-120px, -9vw, -80px); background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: clamp(1.4rem, 3vw, 2.2rem); display: grid; grid-template-columns: 1fr 320px; gap: clamp(1.25rem, 3vw, 2.5rem); align-items: start; }
+.offer-card { position: relative; z-index: 2; margin-top: clamp(-120px, -9vw, -80px); background: #fff; border-radius: var(--radius); box-shadow: var(--shadow-lg); padding: clamp(1.1rem, 2.2vw, 1.6rem); display: grid; grid-template-columns: 1fr 320px; gap: clamp(1rem, 2vw, 1.5rem); align-items: center; }
 @media (max-width: 860px) { .offer-card { grid-template-columns: 1fr; } }
 .offer-card__icons { display: flex; align-items: center; gap: .5rem; color: var(--text-2); margin-bottom: .6rem; }
 .offer-card__icons svg { width: 20px; height: 17px; }
-.offer-buy { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; background: var(--surface-2); }
+.offer-buy { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.1rem 1.1rem 1rem; background: var(--surface-2); }
 
 /* Voucher hero card — matches the production voucher page (floating white card over the hero). */
 .vcard { position: relative; z-index: 2; margin-top: clamp(-110px, -8vw, -72px); background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(1.4rem, 3vw, 2rem) clamp(1.3rem, 3vw, 2.2rem) .25rem; }
@@ -835,5 +835,5 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .daterow button.sel { border-color: var(--blue); background: #EAF4FE; }
 .daterow .d-day { display: block; font-weight: 700; color: var(--ink); font-size: var(--fs-400); }
 .daterow .d-price { display: block; font-size: var(--fs-300); color: var(--text-2); }
-.or-divider { display: flex; align-items: center; gap: .8rem; color: var(--muted); font-size: var(--fs-300); font-weight: 700; margin: .9rem 0; }
+.or-divider { display: flex; align-items: center; gap: .8rem; color: var(--muted); font-size: var(--fs-300); font-weight: 700; margin: .6rem 0; }
 .or-divider::before, .or-divider::after { content: ""; height: 1px; background: var(--border); flex: 1; }
