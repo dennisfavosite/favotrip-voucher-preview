@@ -180,6 +180,46 @@
     }));
   });
 
+  /* ---- Voucher calendar: month scroller, opens on the cheapest month ---- */
+  const vcalScroll = document.getElementById("vcalScroll");
+  if (vcalScroll) {
+    const wrap = vcalScroll.closest(".vcal-scroll-wrap");
+    const prev = wrap && wrap.querySelector("[data-vcal-prev]");
+    const next = wrap && wrap.querySelector("[data-vcal-next]");
+    const months = Array.from(vcalScroll.querySelectorAll(".vcal-month"));
+    const step = () => {
+      if (months.length < 2) return vcalScroll.clientWidth;
+      return Math.round(months[1].getBoundingClientRect().left - months[0].getBoundingClientRect().left);
+    };
+    const syncArrows = () => {
+      const max = vcalScroll.scrollWidth - vcalScroll.clientWidth - 1;
+      if (prev) prev.disabled = vcalScroll.scrollLeft <= 1;
+      if (next) next.disabled = vcalScroll.scrollLeft >= max;
+    };
+    if (prev) prev.addEventListener("click", () => vcalScroll.scrollBy({ left: -step(), behavior: "smooth" }));
+    if (next) next.addEventListener("click", () => vcalScroll.scrollBy({ left: step(), behavior: "smooth" }));
+    vcalScroll.addEventListener("scroll", syncArrows, { passive: true });
+    window.addEventListener("resize", syncArrows, { passive: true });
+    // Open on the cheapest month, instantly (no animated scroll on load).
+    // offsetLeft is a stable layout value (unaffected by current scroll), so this
+    // lands the same on first paint and after fonts load. Clamped to the max scroll,
+    // so when the cheapest month can't reach the far left it's simply brought into view.
+    const cheapest = vcalScroll.querySelector(".vcal-month[data-cheapest]");
+    const openOnCheapest = () => {
+      if (cheapest) {
+        const max = vcalScroll.scrollWidth - vcalScroll.clientWidth;
+        const target = Math.max(0, Math.min(cheapest.offsetLeft - vcalScroll.offsetLeft - 4, max));
+        const behavior = vcalScroll.style.scrollBehavior;
+        vcalScroll.style.scrollBehavior = "auto";
+        vcalScroll.scrollLeft = target;
+        vcalScroll.style.scrollBehavior = behavior;
+      }
+      syncArrows();
+    };
+    requestAnimationFrame(openOnCheapest);
+    window.addEventListener("load", openOnCheapest);
+  }
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
