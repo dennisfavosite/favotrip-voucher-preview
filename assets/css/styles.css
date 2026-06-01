@@ -368,6 +368,56 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .gband__quote p { color: #fff; font-style: italic; font-size: var(--fs-400); line-height: 1.5; margin-top: 0; }
 @media (max-width: 760px) { .gband { grid-template-columns: 1fr; } }
 
+/* ===== v3: header search + language switcher + account, real hero search, newsletter tab ===== */
+.nav__icon-btn { display: inline-flex; align-items: center; gap: .4rem; font-weight: 600; font-size: var(--fs-400); color: var(--ink); padding: .5rem .55rem; border-radius: 8px; }
+.nav__icon-btn:hover { color: var(--blue); background: #F3F7FB; }
+.nav__icon-btn svg { width: 1.15em; height: 1.15em; }
+.nav__icon-btn, .nav__account, .nav__lang { white-space: nowrap; }
+.nav__account { display: inline-flex; align-items: center; gap: .4rem; font-weight: 600; font-size: var(--fs-400); color: var(--ink); padding: .5rem .55rem; border-radius: 8px; }
+.nav__account:hover { color: var(--blue); background: #F3F7FB; }
+.nav__account svg { width: 1.2em; height: 1.2em; }
+.nav__lang-wrap { position: relative; }
+.nav__lang { display: inline-flex; align-items: center; gap: .35rem; font-weight: 700; font-size: var(--fs-400); color: var(--ink); padding: .45rem .7rem; border: 1px solid var(--border); border-radius: var(--pill); background: #fff; }
+.nav__lang:hover { border-color: #cfd6ea; }
+.nav__lang .flag { font-size: 1.05rem; line-height: 1; }
+.nav__lang svg { width: .85em; height: .85em; transition: transform .2s var(--ease); }
+.nav__lang-wrap.open .nav__lang svg { transform: rotate(180deg); }
+.nav__lang-menu { position: absolute; top: calc(100% + 8px); right: 0; min-width: 244px; background: #fff; border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow-lg); padding: .4rem; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .18s var(--ease), transform .18s var(--ease); z-index: 90; }
+.nav__lang-wrap.open .nav__lang-menu { opacity: 1; visibility: visible; transform: none; }
+.nav__lang-menu a { display: flex; align-items: center; gap: .6rem; padding: .55rem .7rem; border-radius: 9px; font-size: var(--fs-400); color: var(--ink); font-weight: 600; }
+.nav__lang-menu a:hover { background: #F3F7FB; }
+.nav__lang-menu .flag { font-size: 1.25rem; line-height: 1; }
+.nav__lang-menu small { display: block; color: var(--muted); font-weight: 500; font-size: var(--fs-300); }
+@media (max-width: 1120px) { .hide-tablet { display: none; } }
+@media (max-width: 1040px) { .nav__lang-wrap, .nav__account, .nav__icon-btn { display: none; } }
+
+/* Real hero search bar (Aankomst / Aantal nachten / Reisgezelschap / Zoeken) */
+.herobar { display: grid; grid-template-columns: 1.1fr 1fr 1.25fr auto; align-items: stretch; background: #fff; border-radius: 12px; box-shadow: var(--shadow-lg); max-width: 62rem; margin-top: 1.75rem; }
+.herobar__field { padding: .7rem 1.1rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: .15rem; position: relative; justify-content: center; }
+.herobar__field > label { font-size: var(--fs-300); font-weight: 700; color: var(--ink); }
+.herobar__field input, .herobar__field select { border: 0; background: transparent; font-size: var(--fs-400); color: var(--ink); width: 100%; padding: 0; cursor: pointer; }
+.herobar__field input:focus, .herobar__field select:focus { outline: none; }
+.herobar__btn { border-radius: 0 12px 12px 0; box-shadow: none; }
+.travelers details { width: 100%; }
+.travelers summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: .5rem; font-size: var(--fs-400); color: var(--ink); }
+.travelers summary::-webkit-details-marker { display: none; }
+.travelers summary svg { width: 1em; height: 1em; color: var(--text-2); transition: transform .2s var(--ease); }
+.travelers details[open] summary svg { transform: rotate(180deg); }
+.travelers__pop { position: absolute; left: 0; top: calc(100% + 10px); background: #fff; border: 1px solid var(--border); border-radius: 12px; box-shadow: var(--shadow-lg); padding: 1rem; min-width: 250px; z-index: 30; }
+.travelers__row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.travelers__row + .travelers__row { margin-top: .75rem; }
+.travelers__row select { border: 1px solid var(--border); border-radius: 8px; padding: .35rem .6rem; cursor: pointer; }
+@media (max-width: 780px) {
+  .herobar { grid-template-columns: 1fr; max-width: none; }
+  .herobar__field { border-right: 0; border-bottom: 1px solid var(--border); }
+  .herobar__btn { border-radius: 0 0 12px 12px; }
+}
+
+/* Vertical newsletter tab (right edge, like the real site) */
+.nl-tab { position: fixed; right: 0; top: 50%; transform: translateY(-50%); z-index: 54; background: var(--blue-cta); color: #fff; writing-mode: vertical-rl; font-weight: 700; font-size: var(--fs-400); padding: 1.1rem .5rem; border-radius: 10px 0 0 10px; box-shadow: -4px 4px 16px rgba(0,0,0,.18); letter-spacing: .02em; }
+.nl-tab:hover { background: var(--blue-dark); color: #fff; padding-right: .7rem; }
+@media (max-width: 680px) { .nl-tab { display: none; } }
+
 /* USP trio */
 .usp { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.6rem; box-shadow: var(--shadow-xs); height: 100%; }
 .usp__icon { width: 3rem; height: 3rem; border-radius: 12px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1rem; background: var(--green-soft); color: var(--green-ink); }

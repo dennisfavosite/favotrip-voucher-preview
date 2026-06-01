@@ -112,6 +112,47 @@
     btns.forEach((b) => b.addEventListener("click", () => { btns.forEach((x) => x.classList.remove("sel")); b.classList.add("sel"); }));
   });
 
+  /* ---- Language / country switcher ---- */
+  const langWrap = document.getElementById("langWrap");
+  if (langWrap) {
+    const btn = document.getElementById("langBtn");
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = langWrap.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+    langWrap.querySelectorAll("[data-lang]").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.getElementById("langFlag").textContent = a.dataset.flag;
+      document.getElementById("langLabel").textContent = a.dataset.lang;
+      langWrap.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    }));
+    document.addEventListener("click", (e) => {
+      if (!langWrap.contains(e.target)) { langWrap.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); }
+    });
+  }
+
+  /* ---- Hero search: default arrival date + travelers summary ---- */
+  const hsDate = document.getElementById("hs-date");
+  if (hsDate) {
+    const today = new Date();
+    const plus14 = new Date(today.getTime() + 14 * 86400000);
+    hsDate.min = today.toISOString().slice(0, 10);
+    if (!hsDate.value) hsDate.value = plus14.toISOString().slice(0, 10);
+  }
+  const travSummary = document.getElementById("travSummary");
+  if (travSummary) {
+    const adults = document.getElementById("hs-adults");
+    const kids = document.getElementById("hs-children");
+    const upd = () => {
+      const a = Number(adults.value), c = Number(kids.value);
+      travSummary.textContent = a + " volwassene" + (a === 1 ? "" : "n") + (c > 0 ? ", " + c + (c === 1 ? " kind" : " kinderen") : "");
+    };
+    adults.addEventListener("change", upd);
+    kids.addEventListener("change", upd);
+  }
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
