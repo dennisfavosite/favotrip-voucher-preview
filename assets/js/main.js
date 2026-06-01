@@ -261,6 +261,24 @@
     });
   });
 
+  /* ---- Reviews carousel (3 per view, prev/next arrows) ---- */
+  document.querySelectorAll(".revcar").forEach((c) => {
+    const track = c.querySelector("[data-revcar-track]");
+    const prev = c.querySelector("[data-revcar-prev]");
+    const next = c.querySelector("[data-revcar-next]");
+    if (!track) return;
+    const sync = () => {
+      const max = track.scrollWidth - track.clientWidth - 1;
+      if (prev) prev.disabled = track.scrollLeft <= 1;
+      if (next) next.disabled = track.scrollLeft >= max;
+    };
+    if (prev) prev.addEventListener("click", () => track.scrollBy({ left: -track.clientWidth, behavior: "smooth" }));
+    if (next) next.addEventListener("click", () => track.scrollBy({ left: track.clientWidth, behavior: "smooth" }));
+    track.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync, { passive: true });
+    sync();
+  });
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
