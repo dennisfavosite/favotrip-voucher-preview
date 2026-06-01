@@ -220,6 +220,16 @@
     window.addEventListener("load", openOnCheapest);
   }
 
+  /* ---- Accordion (voucher upsell: "Eén voucher, meerdere mogelijkheden") ---- */
+  document.querySelectorAll("[data-acc]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".acc__item");
+      if (!item) return;
+      const open = item.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(open));
+    });
+  });
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
