@@ -797,6 +797,37 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .offer-card__icons svg { width: 20px; height: 17px; }
 .offer-buy { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; background: var(--surface-2); }
 
+/* Voucher hero card — matches the production voucher page (floating white card over the hero). */
+.vcard { position: relative; z-index: 2; margin-top: clamp(-110px, -8vw, -72px); background: #fff; border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(1.4rem, 3vw, 2rem) clamp(1.3rem, 3vw, 2.2rem) .25rem; }
+.vcard__main { display: flex; flex-direction: column; gap: 1.3rem; }
+@media (min-width: 920px) { .vcard__main { flex-direction: row; justify-content: space-between; align-items: flex-start; gap: 2rem; } }
+.vcard__info { flex: 1; min-width: 0; }
+.vcard__icons { display: flex; align-items: center; gap: .5rem; color: var(--ink); }
+.vcard__icons svg { width: 22px; height: 22px; }
+.vcard__icons span { font-weight: 600; }
+.vcard__title { margin: .55rem 0 0; font-size: var(--fs-800); font-weight: 800; color: var(--ink); line-height: 1.2; }
+.vcard__sub { margin: .35rem 0 0; font-size: var(--fs-400); color: var(--text-2); }
+.vcard__chip { display: inline-flex; align-items: center; gap: .35rem; margin-top: .75rem; background: var(--blue-cta); color: #fff; font-size: 11px; font-weight: 600; padding: .25rem .6rem; border-radius: 4px; }
+.vcard__chip svg { width: 13px; height: 13px; }
+.vcard__buy { display: flex; flex-direction: column; }
+@media (min-width: 920px) { .vcard__buy { align-items: flex-end; min-width: 340px; } }
+.vcard__disc { align-self: flex-start; background: var(--red); color: #fff; font-weight: 700; font-size: var(--fs-300); padding: .3rem .6rem; border-radius: 6px; margin-bottom: .55rem; }
+@media (min-width: 920px) { .vcard__disc { align-self: flex-end; } }
+.vcard__price { display: flex; align-items: baseline; gap: .5rem; }
+.vcard__now { font-size: clamp(1.9rem, 3vw, 2.4rem); font-weight: 800; color: #030728; }
+.vcard__unit { font-size: var(--fs-400); color: var(--text-2); }
+.vcard__cta { display: flex; align-items: center; justify-content: center; gap: .5rem; margin-top: 1rem; width: 100%; background: linear-gradient(90deg, #FF8B33, #F56A00); color: #fff; font-weight: 700; font-size: var(--fs-600); padding: 1rem 1.25rem; border-radius: 8px; box-shadow: var(--shadow-sm); transition: transform .2s var(--ease); }
+@media (min-width: 920px) { .vcard__cta { width: 400px; } }
+.vcard__cta:hover { transform: scale(1.02); }
+.vcard__foot { margin-top: .55rem; font-size: var(--fs-300); color: var(--muted); text-align: center; }
+@media (min-width: 920px) { .vcard__foot { text-align: right; } }
+.vcard__trust { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .4rem 0; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.vcard__badge { display: inline-flex; align-items: center; gap: .4rem; padding: 0 1.1rem; font-size: var(--fs-300); color: var(--text-2); }
+@media (min-width: 620px) { .vcard__badge + .vcard__badge { border-left: 1px solid var(--border); } }
+.vcard__badge svg { width: 15px; height: 15px; color: var(--muted); }
+.vcard__viewers { display: flex; align-items: center; justify-content: center; gap: .4rem; margin: .6rem 0 0; padding-bottom: 1.1rem; font-size: var(--fs-300); color: var(--muted); }
+.vcard__viewers svg { width: 15px; height: 15px; }
+
 /* --- Deal detail: date teaser + dual CTA --- */
 .daterow { display: flex; gap: .5rem; flex-wrap: wrap; margin: 1rem 0; }
 .daterow button { flex: 1 1 0; min-width: 88px; border: 1.5px solid var(--border); background: #fff; border-radius: var(--radius-sm); padding: .6rem .4rem; text-align: center; transition: all .15s; }
