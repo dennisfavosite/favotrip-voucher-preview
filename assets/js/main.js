@@ -241,11 +241,16 @@
     reveals.forEach((el) => el.classList.add("in"));
   }
 
-  /* ---- Sticky CTA on detail page ---- */
+  /* ---- Sticky CTA on detail page: show once the hero CTA has scrolled above the viewport ---- */
   const sticky = document.getElementById("stickyCta");
   if (sticky) {
-    const onScroll = () => { sticky.classList.toggle("show", window.scrollY > 700); };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    const mainCta = document.querySelector("[data-main-cta]");
+    const update = () => {
+      const show = mainCta ? mainCta.getBoundingClientRect().bottom < 8 : window.scrollY > 600;
+      sticky.classList.toggle("show", show);
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update, { passive: true });
   }
 })();
