@@ -172,6 +172,14 @@
     kids.addEventListener("change", upd);
   }
 
+  /* ---- Choice chip groups (checkout: voor wie / betaalmethode) ---- */
+  document.querySelectorAll("[data-choice]").forEach((group) => {
+    group.querySelectorAll(".chip").forEach((chip) => chip.addEventListener("click", () => {
+      group.querySelectorAll(".chip").forEach((c) => c.classList.remove("is-active"));
+      chip.classList.add("is-active");
+    }));
+  });
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
