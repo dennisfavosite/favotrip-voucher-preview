@@ -112,6 +112,25 @@
     btns.forEach((b) => b.addEventListener("click", () => { btns.forEach((x) => x.classList.remove("sel")); b.classList.add("sel"); }));
   });
 
+  /* ---- Nav dropdowns: only one open at a time (hover + click + keyboard) ---- */
+  const navItems = document.querySelectorAll(".nav__item");
+  if (navItems.length) {
+    const closeAll = (except) => navItems.forEach((i) => { if (i !== except) i.classList.remove("open"); });
+    navItems.forEach((item) => {
+      const trigger = item.querySelector(".nav__trigger");
+      if (!trigger) return;
+      trigger.addEventListener("click", (e) => {
+        e.preventDefault();
+        const isOpen = item.classList.contains("open");
+        closeAll();
+        if (!isOpen) item.classList.add("open");
+      });
+      item.addEventListener("mouseenter", () => closeAll(item));
+    });
+    document.addEventListener("click", (e) => { if (!e.target.closest(".nav__item")) closeAll(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeAll(); });
+  }
+
   /* ---- Language / country switcher ---- */
   const langWrap = document.getElementById("langWrap");
   if (langWrap) {
