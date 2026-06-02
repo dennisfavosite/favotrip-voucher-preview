@@ -983,7 +983,7 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .vcard--deal { margin-top: clamp(-92px, -6.5vw, -60px); padding: clamp(.95rem, 2vw, 1.3rem) clamp(1.1rem, 2.6vw, 1.7rem) .2rem; }
 .vcard--deal .vcard__main { gap: .9rem; }
 @media (min-width: 920px) { .vcard--deal .vcard__main { gap: 1.6rem; } }
-.vcard--deal .vcard__title { font-size: var(--fs-700); margin-top: .35rem; }
+.vcard--deal .vcard__title { font-size: var(--fs-800); margin-top: .4rem; }
 .vcard--deal .vcard__sub { font-size: var(--fs-300); margin-top: .25rem; }
 .vcard--deal .vcard__now { font-size: clamp(1.5rem, 2.2vw, 1.9rem); }
 .vcard--deal .vcard__from { font-size: var(--fs-400); }
@@ -996,7 +996,7 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .vcard--deal .vcard__foot svg { width: .95rem; height: .95rem; flex: none; }
 
 /* ===== Deal-hero VARIANTS (Dennis kiest de beste) ===== */
-.vcard__meta-line { margin: .5rem 0 0; font-size: var(--fs-400); color: var(--text-2); display: flex; align-items: center; gap: .35rem; flex-wrap: wrap; }
+.vcard__meta-line { margin: .55rem 0 0; font-size: var(--fs-500); color: var(--text-2); display: flex; align-items: center; gap: .35rem; flex-wrap: wrap; }
 .vcard__meta-line svg { width: 1rem; height: 1rem; color: var(--muted); flex: none; }
 .dvh1 .vcard__cta, .dvh2 .vcard__cta, .dvh5 .vcard__cta { width: 100%; }
 .dvh3 .vcard__cta, .dvh4 .vcard__cta { width: auto; margin-top: 0; }
