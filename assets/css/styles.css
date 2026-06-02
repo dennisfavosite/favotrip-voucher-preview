@@ -470,7 +470,7 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .exhotel__area svg { width: .95rem; height: .95rem; color: var(--green); flex: none; }
 
 /* ===== Voucher detail content sections (production format: stacked white cards) ===== */
-.vsections { display: grid; gap: 1.1rem; }
+.vsections { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.1rem; }
 .vsec { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 1.75rem); }
 .vsec__title { display: flex; align-items: center; gap: .55rem; margin: 0 0 1.1rem; font-size: var(--fs-700); font-weight: 800; color: var(--ink); }
 .vsec__title svg { width: 24px; height: 24px; flex: none; }

@@ -282,10 +282,13 @@
   /* ---- Checkout: "Voor mezelf" / "Als cadeau" toggle (reveals gift fields) ---- */
   document.querySelectorAll("[data-gift-choice]").forEach((group) => {
     const fields = document.querySelector("[data-gift-fields]");
+    const kindLabel = document.querySelector("[data-kind-label]");
     const set = (chip) => {
       group.querySelectorAll(".chip").forEach((c) => c.classList.remove("is-active"));
       chip.classList.add("is-active");
-      if (fields) fields.hidden = !chip.hasAttribute("data-gift");
+      const isGift = chip.hasAttribute("data-gift");
+      if (fields) fields.hidden = !isGift;
+      if (kindLabel) kindLabel.textContent = isGift ? "Cadeauvoucher" : "Voucher";
     };
     group.querySelectorAll(".chip").forEach((chip) => chip.addEventListener("click", () => set(chip)));
     // Arriving from a "Cadeau geven" CTA (?gift) preselects "Als cadeau".
