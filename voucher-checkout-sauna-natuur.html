@@ -33,7 +33,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=8d145fa6">
+<link rel="stylesheet" href="assets/css/styles.css?v=a058ccc8">
 
 </head>
 <body id="top">
@@ -124,6 +124,7 @@
         <div class="stack mt-4" style="max-width:34rem">
           <div class="field"><label>Naam</label><input type="text" placeholder="Je naam"></div>
           <div class="field"><label>E-mailadres</label><input type="email" placeholder="Hier sturen we de voucher naartoe"></div>
+          <div class="field" style="max-width:9rem"><label>Aantal</label><select data-qty><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>
         </div>
       </div>
       <div class="seo-block mt-6" style="padding:clamp(1.25rem,3vw,1.75rem)">
@@ -137,17 +138,33 @@
       </div>
     </div>
     <aside>
-      <div class="buybox">
+      <div class="buybox" data-checkout data-unit="158">
         <div style="display:flex;gap:.8rem;align-items:center"><img src="assets/images/experiences/exp13.jpg" alt="" style="width:74px;height:56px;border-radius:8px;object-fit:cover;flex:none"><div><span class="pill pill--blue" style="margin-bottom:.35rem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v14"/></svg> <span data-kind-label>Voucher</span></span><strong style="display:block;color:var(--ink);font-size:var(--fs-400);line-height:1.3">Sauna en rust midden in de natuur</strong></div></div>
-        <ul class="buybox__list" style="margin:1.1rem 0">
+        <ul class="buybox__list" style="margin:1.1rem 0 .6rem">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 12 maanden geldig</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Direct per e-mail geleverd</li>
           <li><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Inclusief Vouchergarantie</li>
         </ul>
-        <div style="display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--border);padding-top:.9rem"><span style="color:var(--text-2)">Totaal</span><span class="buybox__now">&euro; 158,-</span></div>
-        <a class="btn btn--block btn--lg" style="margin-top:1rem" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Betaal &euro; 158,-</a>
+        <div class="co-summary">
+          <div class="co-row"><span>Prijs per voucher</span><span data-unit-label>&euro; 158,-</span></div>
+          <div class="co-row" data-qty-row hidden><span>Aantal</span><span data-qty-label></span></div>
+          <div class="co-coupon" data-coupon>
+            <div class="co-coupon__row">
+              <span class="co-coupon__field"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.6 2.6 21 11a2 2 0 0 1 0 2.8l-7.2 7.2a2 2 0 0 1-2.8 0L2.6 12.6A2 2 0 0 1 2 11.2V4a2 2 0 0 1 2-2h7.2a2 2 0 0 1 1.4.6z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></svg><input type="text" data-coupon-input placeholder="KORTINGSCODE" autocomplete="off" aria-label="Kortingscode"></span>
+              <button type="button" class="co-coupon__apply" data-coupon-apply>Toepassen</button>
+            </div>
+            <p class="co-coupon__hint" data-coupon-hint>Demo-codes: FAVO10, WELKOM15, ZOMER25</p>
+            <p class="co-coupon__err" data-coupon-err hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6M9 9l6 6"/></svg> Ongeldige code</p>
+            <div class="co-coupon__ok" data-coupon-ok hidden><span class="co-coupon__oktext"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> <strong data-coupon-code></strong>&nbsp;<span data-coupon-disc></span></span><button type="button" class="co-coupon__remove" data-coupon-remove>Verwijderen</button></div>
+          </div>
+          <div class="co-row co-row--disc" data-disc-row hidden><span>Korting</span><span data-disc-label></span></div>
+          <hr class="co-hr">
+          <div class="co-row co-row--total"><span>Totaal</span><span class="buybox__now" data-total-label>&euro; 158,-</span></div>
+        </div>
+        <a class="btn btn--block btn--lg" style="margin-top:1rem" data-pay-btn href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Betaal <span data-total-label>&euro; 158,-</span></a>
         <p class="buybox__foot">Na betaling ontvang je de voucher direct per e-mail. De ontvanger verzilvert hem zelf en kiest datum en hotel.</p>
-        <div class="footer-pay__logos" style="justify-content:center;margin-top:.9rem"><img src="assets/images/payments/ideal.png" alt="iDEAL"><img src="assets/images/payments/bancontact.png" alt="Bancontact"><img src="assets/images/payments/mastercard.png" alt="Creditcard"><img src="assets/images/payments/paypal.svg" alt="PayPal"></div>
+        <div class="co-secure"><svg class="shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg> Beveiligde betaling via Stripe</div>
+        <div class="footer-pay__logos" style="justify-content:center;margin-top:.7rem"><img src="assets/images/payments/ideal.png" alt="iDEAL"><img src="assets/images/payments/bancontact.png" alt="Bancontact"><img src="assets/images/payments/mastercard.png" alt="Creditcard"><img src="assets/images/payments/paypal.svg" alt="PayPal"></div>
       </div>
     </aside>
   </div></div></section>
@@ -171,6 +188,6 @@
   </footer>
   <a class="nl-tab" href="#newsletter" aria-label="Schrijf je in voor de nieuwsbrief">Nieuwsbrief</a>
   <a class="whatsapp-fab" href="https://wa.me/31202614916" target="_blank" rel="noopener" aria-label="Chat via WhatsApp" style="position:fixed;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));z-index:55;width:52px;height:52px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(0,0,0,.18)"><span style="width:28px;height:28px;display:block"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.978-1.207zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.289.173-1.413z"/></svg></span></a>
-<script src="assets/js/main.js?v=83c1e811" defer></script>
+<script src="assets/js/main.js?v=61569aea" defer></script>
 </body>
 </html>

@@ -359,3 +359,67 @@
     if (e.key === "Escape") document.querySelectorAll(".itip.open").forEach(function (el) { el.classList.remove("open"); });
   });
 })();
+
+/* Voucher checkout: quantity + kortingscode (demo). Recomputes the price breakdown,
+   discount line, total and pay-button. Demo codes only; real validation is /api/voucher-checkout/validate-coupon. */
+(function () {
+  var root = document.querySelector("[data-checkout]");
+  if (!root) return;
+  var unit = parseInt(root.getAttribute("data-unit"), 10) || 0;
+  var qtySel = document.querySelector("[data-qty]");
+  var input = root.querySelector("[data-coupon-input]");
+  var applyBtn = root.querySelector("[data-coupon-apply]");
+  var removeBtn = root.querySelector("[data-coupon-remove]");
+  var errEl = root.querySelector("[data-coupon-err]");
+  var okEl = root.querySelector("[data-coupon-ok]");
+  var codeEl = root.querySelector("[data-coupon-code]");
+  var discTextEl = root.querySelector("[data-coupon-disc]");
+  var hintEl = root.querySelector("[data-coupon-hint]");
+  var inputRow = root.querySelector(".co-coupon__row");
+  var discRow = root.querySelector("[data-disc-row]");
+  var discLabel = root.querySelector("[data-disc-label]");
+  var qtyRow = root.querySelector("[data-qty-row]");
+  var qtyLabel = root.querySelector("[data-qty-label]");
+  var COUPONS = { FAVO10: { type: "amount", value: 10 }, WELKOM15: { type: "pct", value: 15 }, ZOMER25: { type: "amount", value: 25 } };
+  var coupon = null;
+  function euro(n) { return "€ " + n + ",-"; }
+  function recompute() {
+    var qty = qtySel ? (parseInt(qtySel.value, 10) || 1) : 1;
+    var subtotal = unit * qty;
+    var discount = 0;
+    if (coupon) discount = coupon.type === "pct" ? Math.round(subtotal * coupon.value / 100) : Math.min(coupon.value, subtotal);
+    var total = Math.max(0, subtotal - discount);
+    if (qtyRow) { if (qty > 1) { qtyRow.hidden = false; qtyLabel.textContent = qty + " × " + euro(unit); } else { qtyRow.hidden = true; } }
+    if (discRow) { if (discount > 0) { discRow.hidden = false; discLabel.textContent = "- " + euro(discount); } else { discRow.hidden = true; } }
+    root.querySelectorAll("[data-total-label]").forEach(function (el) { el.textContent = euro(total); });
+  }
+  function applyCoupon() {
+    var code = (input.value || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+    input.value = code;
+    if (!code) return;
+    var c = COUPONS[code];
+    if (!c) { coupon = null; if (okEl) okEl.hidden = true; if (errEl) errEl.hidden = false; recompute(); return; }
+    coupon = c;
+    if (errEl) errEl.hidden = true;
+    if (codeEl) codeEl.textContent = code;
+    if (discTextEl) discTextEl.textContent = c.type === "pct" ? "— " + c.value + "% korting" : "— " + euro(c.value) + " korting";
+    if (okEl) okEl.hidden = false;
+    if (inputRow) inputRow.style.display = "none";
+    if (hintEl) hintEl.style.display = "none";
+    recompute();
+  }
+  function removeCoupon() {
+    coupon = null;
+    if (okEl) okEl.hidden = true;
+    if (errEl) errEl.hidden = true;
+    if (input) input.value = "";
+    if (inputRow) inputRow.style.display = "";
+    if (hintEl) hintEl.style.display = "";
+    recompute();
+  }
+  if (applyBtn) applyBtn.addEventListener("click", applyCoupon);
+  if (input) input.addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); applyCoupon(); } else if (errEl) { errEl.hidden = true; } });
+  if (removeBtn) removeBtn.addEventListener("click", removeCoupon);
+  if (qtySel) qtySel.addEventListener("change", recompute);
+  recompute();
+})();

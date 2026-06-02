@@ -1034,6 +1034,34 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .dvh5__main { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
 .dvh5__divider { display: none; }
 @media (min-width: 920px) { .dvh5__main { grid-template-columns: 1.4fr 1px 1fr; gap: 2rem; align-items: start; } .dvh5__divider { display: block; background: var(--border); align-self: stretch; } }
+
+/* ===== Voucher checkout: price breakdown + kortingscode block ===== */
+[hidden] { display: none !important; } /* author display rules below must not override the hidden attribute */
+.co-summary { margin-top: .5rem; display: grid; gap: .65rem; border-top: 1px solid var(--border); padding-top: .9rem; }
+.co-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; font-size: var(--fs-400); color: var(--text-2); }
+.co-row--disc { color: var(--green); font-weight: 700; }
+.co-row--total { color: var(--ink); font-weight: 800; }
+.co-row--total .buybox__now { font-size: var(--fs-800); font-weight: 800; }
+.co-hr { border: 0; border-top: 1px solid var(--border); margin: .15rem 0; }
+.co-coupon { margin: .1rem 0; }
+.co-coupon__row { display: flex; gap: .5rem; }
+.co-coupon__field { position: relative; flex: 1; display: flex; align-items: center; }
+.co-coupon__field svg { position: absolute; left: .65rem; width: 1rem; height: 1rem; color: var(--muted); pointer-events: none; }
+.co-coupon__field input { width: 100%; border: 1px solid var(--border); border-radius: 8px; padding: .6rem .7rem .6rem 2.05rem; font-size: var(--fs-400); text-transform: uppercase; letter-spacing: .06em; background: #fff; color: var(--ink); }
+.co-coupon__field input::placeholder { letter-spacing: .06em; color: var(--muted); }
+.co-coupon__field input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(10, 141, 233, .12); }
+.co-coupon__apply { flex: none; background: var(--blue-cta); color: #fff; font-weight: 600; font-size: var(--fs-400); padding: 0 1.05rem; border-radius: 8px; transition: background .15s; }
+.co-coupon__apply:hover { background: var(--blue-dark); }
+.co-coupon__hint { margin: .45rem 0 0; font-size: var(--fs-300); color: var(--muted); }
+.co-coupon__err { display: flex; align-items: center; gap: .35rem; margin: .5rem 0 0; font-size: var(--fs-300); color: var(--red); }
+.co-coupon__err svg { width: .9rem; height: .9rem; flex: none; }
+.co-coupon__ok { display: flex; align-items: center; justify-content: space-between; gap: .5rem; background: #ECFDF3; border: 1px solid #ABEFC6; border-radius: 8px; padding: .55rem .7rem; font-size: var(--fs-300); }
+.co-coupon__oktext { display: flex; align-items: center; gap: .4rem; color: #067647; min-width: 0; }
+.co-coupon__oktext svg { width: 1rem; height: 1rem; flex: none; }
+.co-coupon__oktext strong { color: #054f31; }
+.co-coupon__remove { flex: none; color: var(--blue-cta); text-decoration: underline; font-size: var(--fs-300); }
+.co-secure { display: flex; align-items: center; justify-content: center; gap: .4rem; margin-top: .7rem; font-size: var(--fs-300); color: var(--muted); }
+.co-secure svg { width: .95rem; height: .95rem; color: var(--green); flex: none; }
 .vcard--deal .vcard__trust { margin-top: .8rem; padding-top: .7rem; }
 .vcard--deal .vcard__viewers { margin-top: .45rem; padding-bottom: .65rem; }
 
