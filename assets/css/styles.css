@@ -951,3 +951,21 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .daterow .d-price { display: block; font-size: var(--fs-300); color: var(--text-2); }
 .or-divider { display: flex; align-items: center; gap: .8rem; color: var(--muted); font-size: var(--fs-300); font-weight: 700; margin: .6rem 0; }
 .or-divider::before, .or-divider::after { content: ""; height: 1px; background: var(--border); flex: 1; }
+
+/* --- ACM-verplichte prijs-info tooltip (i'tje) --- */
+.itip { position: relative; display: inline-flex; align-items: center; justify-content: center; vertical-align: -2px; width: 1.05em; height: 1.05em; margin-left: .15rem; padding: 0; border: 0; background: none; color: var(--muted); cursor: help; line-height: 0; }
+.itip:hover, .itip:focus-visible { color: var(--blue); }
+.itip__ic { display: inline-flex; }
+.itip__ic svg { width: 1em; height: 1em; }
+.itip__pop { position: absolute; bottom: calc(100% + 9px); left: 50%; transform: translateX(-50%) translateY(4px); width: max-content; max-width: 248px; background: var(--ink); color: #fff; font-size: 12px; line-height: 1.45; font-weight: 500; text-align: left; padding: .6rem .72rem; border-radius: 10px; box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transition: opacity .14s ease, transform .14s ease; z-index: 80; pointer-events: none; white-space: normal; }
+.itip__pop::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--ink); }
+.itip:hover .itip__pop, .itip:focus-within .itip__pop, .itip.open .itip__pop { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+/* keep the bubble on-screen for icons near the right edge (cards) */
+.deal-card__totaal .itip__pop, .deal-card__unit .itip__pop { left: auto; right: -8px; transform: translateY(4px); }
+.deal-card__totaal .itip__pop::after, .deal-card__unit .itip__pop::after { left: auto; right: 12px; transform: none; }
+.deal-card__totaal .itip:hover .itip__pop, .deal-card__totaal .itip.open .itip__pop, .deal-card__unit .itip:hover .itip__pop, .deal-card__unit .itip.open .itip__pop { transform: translateY(0); }
+
+/* trimmed trust card on the deal page (no duplicate booking button) */
+.buybox--trust { top: 96px; }
+.buybox--trust .buybox__foot { display: flex; align-items: center; justify-content: center; gap: .4rem; margin-top: 1rem; padding-top: .85rem; border-top: 1px solid var(--border); }
+.buybox--trust .buybox__foot svg { width: 1rem; height: 1rem; color: var(--green); flex: none; }

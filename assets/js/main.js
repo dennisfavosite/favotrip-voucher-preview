@@ -347,3 +347,15 @@
     window.addEventListener("resize", update, { passive: true });
   }
 })();
+
+/* ACM price-info tooltips (i'tje): tap toggles on touch, click elsewhere or Esc closes. */
+(function () {
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest ? e.target.closest("[data-itip]") : null;
+    document.querySelectorAll(".itip.open").forEach(function (el) { if (el !== btn) el.classList.remove("open"); });
+    if (btn) { e.preventDefault(); e.stopPropagation(); btn.classList.toggle("open"); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") document.querySelectorAll(".itip.open").forEach(function (el) { el.classList.remove("open"); });
+  });
+})();
