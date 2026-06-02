@@ -295,6 +295,31 @@
     }
   });
 
+  /* ---- Gift page v2: filter by occasion / budget ---- */
+  const giftGrid = document.getElementById("giftGrid");
+  if (giftGrid) {
+    const chips = document.querySelectorAll("[data-giftfilter]");
+    const cards = Array.from(giftGrid.querySelectorAll(".deal-card"));
+    const empty = document.getElementById("giftEmpty");
+    const apply = (f) => {
+      let shown = 0;
+      cards.forEach((c) => {
+        let match;
+        if (f === "alle") match = true;
+        else if (f === "budget") match = Number(c.dataset.price) <= 150;
+        else match = (c.dataset.occasions || "").split(" ").includes(f);
+        c.style.display = match ? "" : "none";
+        if (match) shown++;
+      });
+      if (empty) empty.hidden = shown !== 0;
+    };
+    chips.forEach((chip) => chip.addEventListener("click", () => {
+      chips.forEach((c) => c.classList.remove("is-active"));
+      chip.classList.add("is-active");
+      apply(chip.dataset.giftfilter);
+    }));
+  }
+
   /* ---- Reveal on scroll ---- */
   const reveals = document.querySelectorAll(".reveal");
   if (reveals.length && "IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
