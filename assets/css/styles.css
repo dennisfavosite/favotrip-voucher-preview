@@ -994,6 +994,46 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 @media (min-width: 920px) { .vcard--deal .vcard__buy { min-width: 330px; } .vcard--deal .vcard__cta { width: 330px; } }
 .vcard--deal .vcard__foot { display: flex; align-items: center; justify-content: flex-start; gap: .4rem; width: 100%; margin-top: .55rem; text-align: left; }
 .vcard--deal .vcard__foot svg { width: .95rem; height: .95rem; flex: none; }
+
+/* ===== Deal-hero VARIANTS (Dennis kiest de beste) ===== */
+.vcard__meta-line { margin: .5rem 0 0; font-size: var(--fs-400); color: var(--text-2); display: flex; align-items: center; gap: .35rem; flex-wrap: wrap; }
+.vcard__meta-line svg { width: 1rem; height: 1rem; color: var(--muted); flex: none; }
+.dvh1 .vcard__cta, .dvh2 .vcard__cta, .dvh5 .vcard__cta { width: 100%; }
+.dvh3 .vcard__cta, .dvh4 .vcard__cta { width: auto; margin-top: 0; }
+@media (min-width: 920px) {
+  .dvh1 .vcard__cta, .dvh2 .vcard__cta, .dvh5 .vcard__cta { width: 100%; }
+  .dvh3 .vcard__cta, .dvh4 .vcard__cta { width: auto; }
+}
+/* V1 production 3-cell grid */
+@media (min-width: 920px) { .dvh1 .vcard__main { align-items: flex-start; } .dvh1__buy { min-width: 340px; } }
+.pricegrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .6rem; text-align: center; align-items: start; }
+.pricegrid__cell { display: flex; flex-direction: column; gap: .12rem; }
+.pricegrid__lbl { font-size: var(--fs-300); color: var(--text-2); }
+.pricegrid__val { font-size: var(--fs-700); font-weight: 800; color: var(--ink); white-space: nowrap; line-height: 1.1; }
+.pricegrid__val--from { text-decoration: line-through; color: var(--muted); font-weight: 600; }
+.pricegrid__val--disc { color: var(--red); }
+.pricegrid__sub { font-size: var(--fs-300); color: var(--text-2); margin-top: .15rem; }
+.dvh1 .vcard__cta { margin-top: 1rem; }
+.dvh1__voucherlink { display: flex; align-items: center; justify-content: center; gap: .4rem; margin-top: .65rem; color: var(--blue-cta); font-weight: 600; font-size: var(--fs-400); }
+.dvh1__voucherlink svg { width: 1rem; height: 1rem; }
+/* V2 boxed price panel */
+@media (min-width: 920px) { .dvh2 .vcard__main { align-items: stretch; } .pricepanel { min-width: 360px; } }
+.pricepanel { display: flex; flex-direction: column; background: #F8FAFC; border: 1px solid var(--border); border-radius: 14px; padding: 1.1rem 1.2rem; }
+.dvh2 .pricepanel .vcard__disc { align-self: flex-start; }
+/* V3 full-width price bar */
+.dvh3__bar { display: flex; align-items: center; justify-content: space-between; gap: 1.1rem 2rem; flex-wrap: wrap; margin-top: 1.1rem; padding-top: 1.1rem; border-top: 1px solid var(--border); }
+.dvh3__price { display: flex; align-items: baseline; gap: .55rem; flex-wrap: wrap; }
+.dvh3__cta { display: flex; gap: .6rem; flex-wrap: wrap; }
+/* V4 centered */
+.dvh4__inner { max-width: 660px; margin-inline: auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.dvh4 .vcard__icons { justify-content: center; }
+.dvh4__price { display: flex; align-items: baseline; justify-content: center; gap: .6rem; flex-wrap: wrap; margin-top: .85rem; }
+.dvh4__cta { display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center; margin-top: .9rem; }
+.dvh4 .vcard__foot { justify-content: center; margin-top: .8rem; width: auto; }
+/* V5 split with vertical divider */
+.dvh5__main { display: grid; grid-template-columns: 1fr; gap: 1.1rem; }
+.dvh5__divider { display: none; }
+@media (min-width: 920px) { .dvh5__main { grid-template-columns: 1.4fr 1px 1fr; gap: 2rem; align-items: start; } .dvh5__divider { display: block; background: var(--border); align-self: stretch; } }
 .vcard--deal .vcard__trust { margin-top: .8rem; padding-top: .7rem; }
 .vcard--deal .vcard__viewers { margin-top: .45rem; padding-bottom: .65rem; }
 
