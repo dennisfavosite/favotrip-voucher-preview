@@ -992,7 +992,8 @@ h1, h2, h3, h4 { color: var(--ink); line-height: 1.15; font-weight: 800; letter-
 .vcard--deal .vcard__cta { margin-top: .55rem; padding: .68rem 1.1rem; font-size: var(--fs-500); }
 .vcard--deal .vcard__cta--ghost { margin-top: .45rem; }
 @media (min-width: 920px) { .vcard--deal .vcard__buy { min-width: 330px; } .vcard--deal .vcard__cta { width: 330px; } }
-.vcard--deal .vcard__foot { margin-top: .45rem; }
+.vcard--deal .vcard__foot { display: flex; align-items: center; justify-content: flex-start; gap: .4rem; width: 100%; margin-top: .55rem; text-align: left; }
+.vcard--deal .vcard__foot svg { width: .95rem; height: .95rem; flex: none; }
 .vcard--deal .vcard__trust { margin-top: .8rem; padding-top: .7rem; }
 .vcard--deal .vcard__viewers { margin-top: .45rem; padding-bottom: .65rem; }
 
